@@ -21,6 +21,8 @@ From the main project directory.
 mvn clean package
 ```
 
+This will recursively build all of the sub-modules in the project.
+
 # Run everything
 
 There are two ways to start the Docker containers.
@@ -36,6 +38,9 @@ There are two ways to start the Docker containers.
     docker-compose down
     ```
     
+**Note** Docker containers for each service are **not** built.  Rather each service (.war file) is run in a separate container launched from the same image (lappsgrid/tomat7:1.2.3)
+
+
 # Run the pipeline
 
 The `pipeline.lsd` script cab be used to run the pipeline of services on the Booth/Lincoln text.
