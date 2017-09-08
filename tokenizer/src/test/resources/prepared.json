@@ -1,0 +1,58 @@
+{
+  "discriminator" : "http://vocab.lappsgrid.org/ns/media/jsonld#lif",
+  "payload" : {
+    "@context" : "http://vocab.lappsgrid.org/context-1.0.0.jsonld",
+    "metadata" : { },
+    "text" : {
+      "@value" : "question.\nAnswer one.\nAnswer two.\n"
+    },
+    "views" : [ {
+      "id" : "questions",
+      "metadata" : {
+        "contains" : {
+          "http://deiis.lti.cs.cmu.edu/Question" : {
+            "producer" : "edu.cmu.cs.lti.deiis.prep.PrepareData",
+            "type" : "question"
+          },
+          "http://deiis.lti.cs.cmu.edu/Answer" : {
+            "producer" : "edu.cmu.cs.lti.deiis.prep.PrepareData",
+            "type" : "answer"
+          }
+        }
+      },
+      "annotations" : [ {
+        "id" : "q-0",
+        "start" : 0,
+        "end" : 9,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Question",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.prep.PrepareData",
+          "confidence" : 1.0,
+          "text" : "question."
+        }
+      }, {
+        "id" : "a-0",
+        "start" : 10,
+        "end" : 21,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.prep.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Answer one.",
+          "isAnswer" : true
+        }
+      }, {
+        "id" : "a-1",
+        "start" : 22,
+        "end" : 33,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.prep.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Answer two.",
+          "isAnswer" : false
+        }
+      } ]
+    } ]
+  }
+}

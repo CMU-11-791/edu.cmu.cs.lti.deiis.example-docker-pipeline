@@ -1,0 +1,576 @@
+{
+  "discriminator" : "http://vocab.lappsgrid.org/ns/media/jsonld#lif",
+  "payload" : {
+    "@context" : "http://vocab.lappsgrid.org/context-1.0.0.jsonld",
+    "metadata" : { },
+    "text" : {
+      "@value" : "Booth shot Lincoln?\nLincoln shot Booth.\nLincoln was shot by Booth.\nBooth shot Lincoln.\nBooth was shot by Lincoln.\nBooth assassinated Lincoln.\nLincoln assassinated Booth.\nLincoln was assassinated by Booth.\nBooth was assassinated by Lincoln.\n"
+    },
+    "views" : [ {
+      "id" : "qa",
+      "metadata" : {
+        "contains" : {
+          "http://deiis.lti.cs.cmu.edu/Question" : {
+            "producer" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+            "type" : "question"
+          },
+          "http://deiis.lti.cs.cmu.edu/Answer" : {
+            "producer" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+            "type" : "answer"
+          }
+        }
+      },
+      "annotations" : [ {
+        "id" : "q-0",
+        "start" : 0,
+        "end" : 19,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Question",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Booth shot Lincoln?"
+        }
+      }, {
+        "id" : "a-0",
+        "start" : 20,
+        "end" : 39,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Lincoln shot Booth.",
+          "isAnswer" : false
+        }
+      }, {
+        "id" : "a-1",
+        "start" : 40,
+        "end" : 66,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Lincoln was shot by Booth.",
+          "isAnswer" : true
+        }
+      }, {
+        "id" : "a-2",
+        "start" : 67,
+        "end" : 86,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Booth shot Lincoln.",
+          "isAnswer" : true
+        }
+      }, {
+        "id" : "a-3",
+        "start" : 87,
+        "end" : 113,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Booth was shot by Lincoln.",
+          "isAnswer" : false
+        }
+      }, {
+        "id" : "a-4",
+        "start" : 114,
+        "end" : 141,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Booth assassinated Lincoln.",
+          "isAnswer" : true
+        }
+      }, {
+        "id" : "a-5",
+        "start" : 142,
+        "end" : 169,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Lincoln assassinated Booth.",
+          "isAnswer" : false
+        }
+      }, {
+        "id" : "a-6",
+        "start" : 170,
+        "end" : 204,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Lincoln was assassinated by Booth.",
+          "isAnswer" : true
+        }
+      }, {
+        "id" : "a-7",
+        "start" : 205,
+        "end" : 239,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Answer",
+        "features" : {
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.PrepareData",
+          "confidence" : 1.0,
+          "text" : "Booth was assassinated by Lincoln.",
+          "isAnswer" : false
+        }
+      } ]
+    }, {
+      "id" : "tokens",
+      "metadata" : {
+        "contains" : {
+          "http://vocab.lappsgrid.org/Token" : {
+            "producer" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer"
+          }
+        }
+      },
+      "annotations" : [ {
+        "id" : "tok-0",
+        "start" : 0,
+        "end" : 5,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-1",
+        "start" : 6,
+        "end" : 10,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "shot",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-2",
+        "start" : 11,
+        "end" : 18,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-3",
+        "start" : 18,
+        "end" : 19,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-4",
+        "start" : 20,
+        "end" : 27,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-5",
+        "start" : 28,
+        "end" : 32,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "shot",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-6",
+        "start" : 33,
+        "end" : 38,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-7",
+        "start" : 38,
+        "end" : 39,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-8",
+        "start" : 40,
+        "end" : 47,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-9",
+        "start" : 48,
+        "end" : 51,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "was",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-10",
+        "start" : 52,
+        "end" : 56,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "shot",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-11",
+        "start" : 57,
+        "end" : 59,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "by",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-12",
+        "start" : 60,
+        "end" : 65,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-13",
+        "start" : 65,
+        "end" : 66,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-14",
+        "start" : 67,
+        "end" : 72,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-15",
+        "start" : 73,
+        "end" : 77,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "shot",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-16",
+        "start" : 78,
+        "end" : 85,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-17",
+        "start" : 85,
+        "end" : 86,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-18",
+        "start" : 87,
+        "end" : 92,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-19",
+        "start" : 93,
+        "end" : 96,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "was",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-20",
+        "start" : 97,
+        "end" : 101,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "shot",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-21",
+        "start" : 102,
+        "end" : 104,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "by",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-22",
+        "start" : 105,
+        "end" : 112,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-23",
+        "start" : 112,
+        "end" : 113,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-24",
+        "start" : 114,
+        "end" : 119,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-25",
+        "start" : 120,
+        "end" : 132,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "assassinated",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-26",
+        "start" : 133,
+        "end" : 140,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-27",
+        "start" : 140,
+        "end" : 141,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-28",
+        "start" : 142,
+        "end" : 149,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-29",
+        "start" : 150,
+        "end" : 162,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "assassinated",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-30",
+        "start" : 163,
+        "end" : 168,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-31",
+        "start" : 168,
+        "end" : 169,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-32",
+        "start" : 170,
+        "end" : 177,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-33",
+        "start" : 178,
+        "end" : 181,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "was",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-34",
+        "start" : 182,
+        "end" : 194,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "assassinated",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-35",
+        "start" : 195,
+        "end" : 197,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "by",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-36",
+        "start" : 198,
+        "end" : 203,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-37",
+        "start" : 203,
+        "end" : 204,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-38",
+        "start" : 205,
+        "end" : 210,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Booth",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-39",
+        "start" : 211,
+        "end" : 214,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "was",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-40",
+        "start" : 215,
+        "end" : 227,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "assassinated",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-41",
+        "start" : 228,
+        "end" : 230,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "by",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-42",
+        "start" : 231,
+        "end" : 238,
+        "@type" : "http://vocab.lappsgrid.org/Token",
+        "features" : {
+          "string" : "Lincoln",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      }, {
+        "id" : "tok-43",
+        "start" : 238,
+        "end" : 239,
+        "@type" : "http://deiis.lti.cs.cmu.edu/Punctuation",
+        "features" : {
+          "string" : ".",
+          "componentId" : "edu.cmu.cs.lti.deiis.annotators.Tokenizer",
+          "confidence" : 1.0
+        }
+      } ]
+    } ]
+  }
+}
+
+

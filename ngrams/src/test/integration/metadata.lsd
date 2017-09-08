@@ -1,0 +1,25 @@
+#!/usr/bin/env lsd
+
+/*
+ * Check the metadata for the NGram services.
+ *
+ * This script assumes that the war file is already running in a
+ * Docker container.
+ */
+
+testService('annotator')
+testService('scoring')
+
+println "Test passed."
+return
+
+void testService(String name) {
+    def annotator = new ServiceClient("http://localhost:8080/ngrams/services/$name")
+    Data<ServiceMetadata> data =  Serializer.parse(annotator.getMetadata(), Data)
+    ServiceMetadata md = data.payload
+    assert "https://www.lti.cs.cmu.edu" == md.vendor
+    assert '1.0.0' == md.version
+    println data.asPrettyJson()
+}
+
+

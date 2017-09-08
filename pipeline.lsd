@@ -1,0 +1,79 @@
+#!/usr/bin/env lsd
+
+// The base URL for all services running locally.
+String base = "http://localhost:8080/example-pipeline/services"
+
+ServiceClient client(int port, String name) {
+	return client(port, name, name)
+}
+
+ServiceClient client(int port, String war, String name) {
+	return new ServiceClient("http://localhost:$port/$war/services/$name")
+}
+
+/*
+def prepare = client(8080, 'prepare-data', 'prepare')
+def tokenizer = client(8081, 'tokenizer')
+def annotator = client(8082, 'ngrams', 'annotator')
+def scorer = client(8082, 'ngrams', 'scoring')
+def ranker = client(8083, 'ranker', 'ranker')
+def evaluator = client(8084, 'evaluator')
+def summarize = client(8085, 'summarize')
+*/
+def pipeline = [
+	client(8080, 'prepare-data', 'prepare'),
+	client(8081, 'tokenizer'),
+	client(8082, 'ngrams', 'annotator'),
+	client(8082, 'ngrams', 'scoring'),
+	client(8083, 'ranker', 'ranker'),
+	client(8084, 'evaluator'),
+	client(8085, 'summarize', 'ranking')
+]
+
+// Add the SetParameter service as the second service to be executed.
+pipeline.add(1, new SetParameters())
+
+// Load the test data and run it through the pipeline.
+String input = '''Q Booth shot Lincoln?
+A 0 Lincoln shot Booth.
+A 1 Lincoln was shot by Booth.
+A 1 Booth shot Lincoln.
+A 0 Booth was shot by Lincoln.
+A 1 Booth assassinated Lincoln.
+A 0 Lincoln assassinated Booth.
+A 1 Lincoln was assassinated by Booth.
+A 0 Booth was assassinated by Lincoln.
+'''
+
+pipeline.each { service ->
+	println "Running ${service.class.name}"
+	input = service.execute(input) 
+}
+
+println input
+println "Done"
+return
+
+// Sets the parameters used by the BigramAnnotator, BigramScorer, and Ranker
+// services.
+class SetParameters implements WebService {
+	String getMetadata() {
+		ServiceMetadata md = new ServiceMetadataBuilder()
+			.name(this.class.name)
+			.version('1.0.0')
+			.description('Sets parameters in the Data object for the NGram tagger, scorer and Ranker')
+			.requireFormat(Uri.LIF)
+			.produceFormat(Uri.LIF)
+			.build()
+		return new Data(Uri.META, md).asPrettyJson()
+	}
+	
+	String execute(String input) {
+		Data data = Serializer.parse(input, Data)
+		data.parameters = [:]
+		data.parameters.type = 'BIGRAM'
+		data.parameters.feature = 'score'
+		return data.asJson()
+	}
+}
+

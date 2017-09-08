@@ -1,0 +1,38 @@
+version: '2'
+services:
+    prepare:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./prepare-data/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8080:8080
+    tokenizer:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./tokenizer/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8081:8080
+    ngrams:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./ngrams/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8082:8080
+    ranker:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./ranker/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8083:8080
+    evaluator:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./evaluator/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8084:8080
+    summarize:
+        image: lappsgrid/tomcat7:1.2.3
+        volumes:
+            - ./summarize/target:/var/lib/tomcat7/webapps
+        ports:
+            - 8085:8080
